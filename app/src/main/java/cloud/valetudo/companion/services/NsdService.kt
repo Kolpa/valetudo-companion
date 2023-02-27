@@ -1,4 +1,4 @@
-package cloud.valetudo.companion.services.nsd
+package cloud.valetudo.companion.services
 
 import android.content.Context
 import android.net.nsd.NsdManager
@@ -35,11 +35,11 @@ class NsdService(private val nsdManager: NsdManager) {
         }
 
         override fun onDiscoveryStarted(serviceType: String) {
-
+            // We don't care about start events as our callback flow will hold this state
         }
 
         override fun onDiscoveryStopped(serviceType: String) {
-
+            producer.channel.close()
         }
 
         override fun onServiceFound(service: NsdServiceInfo) {
@@ -76,6 +76,5 @@ class NsdService(private val nsdManager: NsdManager) {
     companion object {
         fun fromContext(context: Context): NsdService? =
             getSystemService(context, NsdManager::class.java)?.let { NsdService(it) }
-
     }
 }

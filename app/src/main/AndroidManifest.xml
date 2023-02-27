@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.INTERNET" />
+
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
     <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
-    <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE" />
 
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE" />
 
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
@@ -30,14 +31,11 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".ProvisioningWizardPageOneActivity"
-            android:exported="false"></activity>
+            android:name=".activities.provisioning.ProvisioningRobotWifiScanActivity"
+            android:exported="false" />
         <activity
-            android:name=".ProvisioningWizardPageTwoActivity"
-            android:exported="false"></activity>
-        <activity
-            android:name=".ProvisioningActivity"
-            android:exported="false"></activity>
+            android:name=".activities.provisioning.ProvisionConnectedRobotActivity"
+            android:exported="false" />
     </application>
 
 </manifest>

@@ -3,9 +3,9 @@ package cloud.valetudo.companion.repositories
 import android.content.Context
 import android.net.nsd.NsdManager
 import android.net.nsd.NsdServiceInfo
-import cloud.valetudo.companion.activities.main.DiscoveredValetudoInstance
-import cloud.valetudo.companion.services.nsd.NsdService
-import cloud.valetudo.companion.services.nsd.NsdService.DiscoveryEvent
+import cloud.valetudo.companion.screens.robots.data.DiscoveredValetudoInstance
+import cloud.valetudo.companion.services.NsdService
+import cloud.valetudo.companion.services.NsdService.DiscoveryEvent
 import kotlinx.coroutines.flow.map
 import kotlinx.coroutines.flow.scan
 
@@ -31,8 +31,7 @@ class ValetudoInstancesRepository(
         const val VALETUDO_SERVICE = "_valetudo._tcp."
 
         fun fromContext(context: Context): ValetudoInstancesRepository {
-            val nsdService =
-                NsdService.fromContext(context) ?: throw Exception("Failed to get NsdService")
+            val nsdService = NsdService.fromContext(context) ?: throw Exception("Failed to get NsdService")
 
             return ValetudoInstancesRepository(nsdService)
         }

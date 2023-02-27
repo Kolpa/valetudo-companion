@@ -1,10 +1,11 @@
-package cloud.valetudo.companion.activities.main
+package cloud.valetudo.companion.screens.robots.ui
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import cloud.valetudo.companion.R
 import cloud.valetudo.companion.databinding.DiscoveredInstanceListItemLayoutBinding
+import cloud.valetudo.companion.screens.robots.data.DiscoveredValetudoInstance
 import cloud.valetudo.companion.utils.setText
 import java.util.*
 

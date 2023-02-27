@@ -1,4 +1,4 @@
-package cloud.valetudo.companion
+package cloud.valetudo.companion.activities.provisioning
 
 import android.content.Intent
 import android.net.ConnectivityManager
@@ -8,12 +8,15 @@ import android.util.Log
 import android.view.View
 import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
+import cloud.valetudo.companion.DiscoveredUnprovisionedValetudoInstance
+import cloud.valetudo.companion.R
+import cloud.valetudo.companion.ValetudoProvisioningHelper
 import cloud.valetudo.companion.activities.main.MainActivity
 import cloud.valetudo.companion.databinding.ActivityProvisioningBinding
 import kotlin.concurrent.thread
 
 
-class ProvisioningActivity : AppCompatActivity() {
+class ProvisionConnectedRobotActivity : AppCompatActivity() {
     private lateinit var binding: ActivityProvisioningBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -34,7 +37,7 @@ class ProvisioningActivity : AppCompatActivity() {
             } catch (ex: Exception) {
                 runOnUiThread {
                     Toast.makeText(
-                        this@ProvisioningActivity,
+                        this@ProvisionConnectedRobotActivity,
                         "Received invalid intent extras",
                         Toast.LENGTH_LONG
                     ).show()
@@ -109,7 +112,7 @@ class ProvisioningActivity : AppCompatActivity() {
                         helpText.visibility = View.VISIBLE
 
                         Toast.makeText(
-                            this@ProvisioningActivity,
+                            this@ProvisionConnectedRobotActivity,
                             "Scan finished without results",
                             Toast.LENGTH_SHORT
                         ).show()
@@ -145,7 +148,7 @@ class ProvisioningActivity : AppCompatActivity() {
 
                         runOnUiThread {
                             Toast.makeText(
-                                this@ProvisioningActivity,
+                                this@ProvisionConnectedRobotActivity,
                                 "Provisioning successful",
                                 Toast.LENGTH_LONG
                             ).show()
@@ -167,7 +170,7 @@ class ProvisioningActivity : AppCompatActivity() {
                     } else {
                         runOnUiThread {
                             Toast.makeText(
-                                this@ProvisioningActivity,
+                                this@ProvisionConnectedRobotActivity,
                                 "Wifi Provisioning failed with code $connectResult",
                                 Toast.LENGTH_LONG
                             ).show()
@@ -179,7 +182,7 @@ class ProvisioningActivity : AppCompatActivity() {
             } else {
                 runOnUiThread {
                     Toast.makeText(
-                        this@ProvisioningActivity,
+                        this@ProvisionConnectedRobotActivity,
                         "Missing foundRobot",
                         Toast.LENGTH_LONG
                     ).show()

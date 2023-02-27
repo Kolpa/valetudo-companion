@@ -1,4 +1,4 @@
-package cloud.valetudo.companion.activities.main
+package cloud.valetudo.companion.screens.robots.data
 
 import android.net.Uri
 import android.net.nsd.NsdServiceInfo

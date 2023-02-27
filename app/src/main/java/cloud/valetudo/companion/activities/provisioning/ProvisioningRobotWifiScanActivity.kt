@@ -1,4 +1,4 @@
-package cloud.valetudo.companion
+package cloud.valetudo.companion.activities.provisioning
 
 import android.Manifest
 import android.content.Intent
@@ -14,11 +14,12 @@ import android.util.Log
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
+import cloud.valetudo.companion.ScanResultAdapter
 import cloud.valetudo.companion.activities.main.MainActivity
 import cloud.valetudo.companion.databinding.ActivityProvisioningPage2Binding
 
 
-class ProvisioningWizardPageTwoActivity : AppCompatActivity() {
+class ProvisioningRobotWifiScanActivity : AppCompatActivity() {
     private var mConnectivityManager: ConnectivityManager? = null
     private var mNetworkCallback: NetworkCallback? = null
 
@@ -83,7 +84,7 @@ class ProvisioningWizardPageTwoActivity : AppCompatActivity() {
         }
 
         fun navigateToProvisioningActivity(newNetworkId: Int? = null, withResult: Boolean = false) {
-            val provisioningIntent = Intent(this, ProvisioningActivity::class.java)
+            val provisioningIntent = Intent(this, ProvisionConnectedRobotActivity::class.java)
 
             if (newNetworkId != null) {
                 provisioningIntent.putExtra("newNetworkId", newNetworkId)

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/availableRobotsFragment">
+    <fragment
+        android:id="@+id/availableRobotsFragment"
+        android:name="cloud.valetudo.companion.screens.robots.ui.AvailableRobotsFragment"
+        android:label="AvailableRobotsFragment" >
+        <action
+            android:id="@+id/action_availableRobotsFragment_to_provisioningModeSelectionFragment"
+            app:destination="@id/provisioningModeSelectionFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/provisioningModeSelectionFragment"
+        android:name="cloud.valetudo.companion.screens.provisioning.selection.ui.ProvisioningModeSelectionFragment"
+        android:label="ProvisioningModeSelectionFragment" />
+</navigation>
